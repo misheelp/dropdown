@@ -1,0 +1,32 @@
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  min-width: 200px;
+  max-width: 300px;
+  margin-top: 30px;
+  padding: 10px;
+}
+
+.highlighted {
+  background: #c6c6f6ba;
+  border-radius: 4px;
+}
+
+.label {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  border: 1px solid rgb(98 103 177 / 39%);
+  border-radius: 6px;
+  padding: 6px;
+  align-items: center;
+  margin-bottom: 4px;
+  height: 24px;
+}
+
+.menu {
+  box-shadow: 0px 0px 3px rgb(118 145 202 / 52%);
+  border-radius: 4px;
+  padding: 8px;
+}
