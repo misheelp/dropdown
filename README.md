@@ -1,4 +1,4 @@
-Hi! Thanks for taking the time to review this. I chose to complete this challenge in React with Javascript (though I often prefer Typescript, I wasn't sure if it was allowed for this project). For any questions or feedback, feel free to reach out to me at mipang@seas.upenn.edu!
+Hi! Thanks for taking the time to review this. I enjoyed working on this prompt and iterating over different features. I chose to complete this challenge in React with Javascript (though I often prefer Typescript, I wasn't sure if it was allowed for this project). For any questions or feedback, feel free to reach out to me at mipang@seas.upenn.edu!
 
 # Dropdown features
 
