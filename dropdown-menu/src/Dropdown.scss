@@ -8,9 +8,41 @@
   padding: 10px;
 }
 
-.highlighted {
-  background: #c6c6f6ba;
+.icon-wrapper {
+  padding-left: 5px;
+  .icon {
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: transform 0.2s linear;
+  }
+
+  .icon.open {
+    cursor: pointer;
+    transform: rotate(180deg);
+    transition: transform 0.2s linear;
+  }
+}
+
+.item {
+  cursor: pointer;
   border-radius: 4px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 5px 0px;
+  padding: 15px 0px 15px 25px;
+  text-align: start;
+}
+
+.highlighted {
+  background-color: rgb(205 226 255 / 42%);
+}
+.background {
+  background-color: white;
+  transition: background-color 0.1s ease-in;
+}
+.background:hover {
+  background-color: rgb(243 247 255 / 73%);
 }
 
 .label {
@@ -19,14 +51,56 @@
   justify-content: space-between;
   border: 1px solid rgb(98 103 177 / 39%);
   border-radius: 6px;
-  padding: 6px;
+  padding: 15px;
   align-items: center;
   margin-bottom: 4px;
   height: 24px;
+  cursor: pointer;
+
+  .label--text {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+
+    .text {
+      padding-right: 5px;
+      white-space: nowrap;
+    }
+  }
+}
+
+.label--open {
+  border: 1px solid rgb(34 44 159 / 68%);
 }
 
 .menu {
   box-shadow: 0px 0px 3px rgb(118 145 202 / 52%);
   border-radius: 4px;
   padding: 8px;
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+.ModalOpen {
+  animation: openModal 0.2s ease-out forwards;
+}
+
+.ModalClosed {
+  animation: closeModal 0.1s ease-out forwards;
+}
+
+@keyframes openModal {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: 200px;
+  }
+}
+
+@keyframes closeModal {
+  100% {
+    max-height: 0;
+    padding: 0;
+  }
 }

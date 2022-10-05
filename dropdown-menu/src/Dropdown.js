@@ -1,33 +1,48 @@
 import React, { useState } from "react";
-import { FaAngleDown } from "react-icons/fa";
+import { FaAngleUp } from "react-icons/fa";
 import Selector from "./Selector";
 import SingleSelector from "./SingleSelector";
 import "./Dropdown.scss";
 
 const Dropdown = (props) => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState([]);
 
   return (
     <div className="dropdown">
-      <div className="label">
-        <FaAngleDown onClick={() => setOpen(!open)} />
-        <div>
-          {selected.map((i) => (
-            <div>{i}</div>
-          ))}
+      <div
+        onClick={() => setOpen(!open)}
+        className={open ? "label label--open" : "label"}
+        title={selected.join(", ")}
+      >
+        <span className="icon-wrapper">
+          <FaAngleUp className={open ? "icon open" : "icon"} />
+        </span>
+        <div className="label--text">
+          {selected.map((i, indx) =>
+            indx !== selected.length - 1 ? (
+              <div className="text">{i}, </div>
+            ) : (
+              <div className="text">{i}</div>
+            )
+          )}
         </div>
       </div>
-      {open &&
-        (props.allowMultiple ? (
-          <Selector></Selector>
+      <div className={open ? "ModalOpen menu" : "ModalClosed menu"}>
+        {props.allowMultiple ? (
+          <Selector
+            items={props.items}
+            setSelected={setSelected}
+            selected={selected}
+          ></Selector>
         ) : (
           <SingleSelector
             items={props.items}
             setSelected={setSelected}
             selected={selected}
           ></SingleSelector>
-        ))}
+        )}
+      </div>
     </div>
   );
 };
